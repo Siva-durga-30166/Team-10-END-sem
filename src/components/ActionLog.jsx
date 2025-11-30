@@ -39,11 +39,11 @@ export function ActionLog({ navigate, currentUser }) {
     if (currentUser?.id) {
       loadActionData();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [currentUser?.id]);
 
   useEffect(() => {
-    // Filter + search
+   
     let filtered = actions;
 
     if (searchTerm) {
@@ -82,7 +82,7 @@ export function ActionLog({ navigate, currentUser }) {
     try {
       setIsLoading(true);
 
-      // both calls in parallel
+      
       const [actionsData, summaryData] = await Promise.all([
         ActionLogger.getActionLog(currentUser.id),
         ActionLogger.getActionLogSummary(currentUser.id),
@@ -92,7 +92,7 @@ export function ActionLog({ navigate, currentUser }) {
       setSummary(summaryData || null);
     } catch (err) {
       console.error("Failed to load action data:", err);
-      // graceful fallback
+      
       setActions([]);
       setSummary(null);
     } finally {

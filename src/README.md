@@ -125,6 +125,3 @@ npm run preview
 
 The application is fully responsive and adapts to different screen sizes while maintaining its professional appearance.
 
-## License
-
-This is a prototype application for educational purposes.
